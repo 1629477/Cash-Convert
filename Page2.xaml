@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="CurrencyApp.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CurrencyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="596" Width="2792">
+
+    <Grid Margin="0,-44,0,-88" FocusVisualPrimaryBrush="{x:Null}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="475*"/>
+            <ColumnDefinition Width="223*"/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Left" Height="812" VerticalAlignment="Center" Width="1396">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5FD864" Offset="0.008"/>
+                    <GradientStop Color="#FFEAC45D" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid HorizontalAlignment="Left" Height="266" Margin="986,480,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.185,0.383">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="113*"/>
+                    <ColumnDefinition Width="91*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Assets/moneycurrency.png"/>
+                </Grid.Background>
+            </Grid>
+            <TextBox x:Name="Current" HorizontalAlignment="Left" Height="76" Margin="60,170,0,0" Text="Enter Value" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" BorderBrush="#66F3D514" FontSize="48" FontWeight="Bold"/>
+            <TextBox x:Name="Calculated" HorizontalAlignment="Left" Height="76" Margin="60,480,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" BorderBrush="#66F3D514" FontSize="48" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Margin="766,168,0,0" Text="British Pound to U.S. Dollar" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" Height="219" RenderTransformOrigin="0.5,0.5" FontSize="72" FontFamily="Dubai Light" FontWeight="Bold">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform ScaleY="1"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button x:Name="USD_to_GBP" Content="USD to GBP" Margin="129,66,0,0" VerticalAlignment="Top" Width="210" Height="48" FontSize="24" FontFamily="Georgia Pro Cond Semibold" FontWeight="Bold" Click="USD_to_GBP_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5EDA5E"/>
+                        <GradientStop Color="#FFF51111" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="GBP_to_USD" Content="GBP to USD" Margin="396,66,0,0" VerticalAlignment="Top" Width="210" Height="48" FontSize="24" FontFamily="Georgia Pro Cond Semibold" FontWeight="Bold" Click="GBP_to_USD_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5EDA5E"/>
+                        <GradientStop Color="#FFF51111" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="GBP_to_Euro" Content="GBP to Euro" Margin="660,66,0,0" VerticalAlignment="Top" Width="210" Height="48" FontSize="24" FontFamily="Georgia Pro Cond Semibold" FontWeight="Bold" Click="GBP_to_Euro_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5EDA5E"/>
+                        <GradientStop Color="#FFF51111" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Euro_to_GBP" Content="Euro to GBP" Margin="929,66,0,0" VerticalAlignment="Top" Width="210" Height="48" FontSize="24" FontFamily="Georgia Pro Cond Semibold" FontWeight="Bold" Click="Euro_to_GBP_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5EDA5E"/>
+                        <GradientStop Color="#FFF51111" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Button x:Name="calc" Content="Calculate" Margin="64,312,0,0" VerticalAlignment="Top" Height="52" Width="338" FontSize="36" FontWeight="Bold">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFC731"/>
+                    <GradientStop Color="#FFE22929" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="48" Margin="460,140,0,0" Text="GBP(£)" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" FontSize="36" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Height="48" Margin="500,325,0,0" Text="To" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" FontSize="36" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Height="48" Margin="452,448,0,0" Text="USD($)" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="p1exit" Content="Exit" Margin="64,588,0,0" VerticalAlignment="Top" Height="52" Width="338" FontSize="36" FontWeight="Bold" Click="p1exit_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFC731"/>
+                    <GradientStop Color="#FFE22929" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Page>
